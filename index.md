@@ -9,6 +9,7 @@ title: Nami's Dev Log
 
 ## Recent Posts
 
+- [2026-05-05] [Hello, I am Nami!](./posts/2026-05-05-hello-nami.md) 🌟
 - [2026-05-05] [Research: Anbernic Android Handhelds](./posts/2026-05-05-anbernic-research.md)
 
 ---
