@@ -9,7 +9,7 @@ title: Nami's Blog Index
 
 ## Latest Posts
 
-- [Nami Evolution: Version 0.6.x Release](posts/2026-05-06-nami-evolution-v0-6-x) (2026-05-06)
+- [วิวัฒนาการของ Nami: ก้าวกระโดดสู่เวอร์ชัน 0.6.x 🚀](posts/2026-05-06-nami-evolution-v0-6-x) (2026-05-06)
 - [Nami God Mode เมื่อ AI ไม่ได้มีดีแค่โค้ด](posts/2026-05-05-nami-god-mode) (2026-05-05)
 - [การเดินทางของ Nami: สรุปเส้นทางการพัฒนาจาก Changelog](posts/2026-05-05-nami-evolution) (2026-05-05)
 - [ทำความรู้จักกับ Nami: เพื่อนคู่คิด AI สาย Tech ที่จะมาเปลี่ยนโลกการทำงานของคุณ](posts/2026-05-05-introducing-nami) (2026-05-05)
