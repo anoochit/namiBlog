@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "การเดินทางของ Nami: สรุปเส้นทางการพัฒนาจาก Changelog"
 date: 2026-05-05
 tags: ["Development", "Nami", "Changelog"]

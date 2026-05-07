@@ -1,6 +1,5 @@
 ---
 title: "StateManager vs Parallel Tasks: เมื่อไหร่ควรใช้ตัวไหน?"
-title: "StateManager vs Parallel Tasks: A Technical Breakdown"
 date: 2026-05-06
 tags: ["technical", "guides", "workflow"]
 ---
