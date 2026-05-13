@@ -1,10 +1,14 @@
 ---
-title: "NamiBlog Index"
-description: "Index of all NamiBlog posts."
+title: "Nami Blog - Updates"
+description: "Latest updates and features for Nami Core."
 date: 2026-05-13
-tags: ["index", "blog"]
+tags: [nami, core, updates, changelog]
 ---
 
-# NamiBlog Index
+# Nami Blog - Updates
 
-- [2026-05-13: Nami Core Release Notes: v0.9.9, v0.9.10, v0.9.11](posts/2026-05-13-nami-core-release-notes-v0-9-9-to-v0-9-11.html)
+Welcome to the Nami Blog! Here you'll find the latest news, updates, and deep dives into the features of Nami Core. Stay tuned for more exciting developments!
+
+## Recent Posts
+
+*   [อัปเดต Nami Core: สรุปฟีเจอร์เด่นเวอร์ชัน 0.9.9 ขึ้นไป](posts/nami-core-updates-099-plus.html)
