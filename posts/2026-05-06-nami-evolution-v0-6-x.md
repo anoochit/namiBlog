@@ -1,5 +1,5 @@
 ---
-title: วิวัฒนาการของ Nami: ก้าวกระโดดสู่เวอร์ชัน 0.6.x 🚀
+title: "วิวัฒนาการของ Nami: ก้าวกระโดดสู่เวอร์ชัน 0.6.x 🚀"
 date: 2026-05-06
 tags: [update, release, nami-core, automation]
 ---
