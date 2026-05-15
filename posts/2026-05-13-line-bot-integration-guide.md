@@ -1,80 +1,41 @@
 ---
-title: "Integrating Nami with LINE Messaging API"
-description: "A comprehensive guide to integrating Nami, your AI agent, with the LINE Messaging API for interactive chat bot experiences."
+title: "คู่มือการเชื่อมต่อ LINE Bot สำหรับนักพัฒนา"
+description: "ขั้นตอนการสร้างและเชื่อมต่อ LINE Bot ด้วย Messaging API อย่างง่าย"
 date: 2026-05-13
-tags: [linebot, integration, nami, api, chat-bot, development]
+tags: [LINE, Bot, MessagingAPI, Tutorial]
 ---
-# Integrating Nami with LINE Messaging API
 
-Good news for all Nami users! Your AI agent now officially supports integration with the LINE Messaging API. This means you can interact with Nami directly through a LINE chat bot, bringing your AI assistant closer to where you communicate most.
+# คู่มือการเชื่อมต่อ LINE Bot สำหรับนักพัฒนา
 
-This guide will walk you through the necessary steps to get your LINE Bot up and running with Nami.
+ในบทความนี้ เราจะมาดูกันว่าการสร้างและเชื่อมต่อ LINE Bot ผ่าน Messaging API มีขั้นตอนอย่างไรบ้าง
 
-## Configuration
+## 1. การเตรียมตัว
+ก่อนเริ่ม คุณต้องมีสิ่งต่อไปนี้:
+- บัญชี [LINE Developers Console](https://developers.line.biz/)
+- LINE Official Account Manager
 
-Before you can run your LINE Bot, you'll need to configure your LINE Channel credentials. You have two primary ways to do this:
+## 2. ขั้นตอนการตั้งค่า
+1. **สร้าง Provider และ Channel:** เข้าไปที่ LINE Developers Console แล้วสร้าง Channel ใหม่ในรูปแบบ "Messaging API"
+2. **ตั้งค่า Webhook:** ในแท็บ Messaging API ให้กำหนด URL ของ Webhook ที่จะใช้รับข้อความจากผู้ใช้
+3. **Issue Access Token:** สร้าง Channel access token เพื่อใช้ในการส่งข้อความผ่าน API
 
-### 1. Using `nami init` (Recommended)
-
-The easiest way to set up your credentials is during Nami's initialization process. Simply run the following command:
-
-```bash
-cargo run -- init
-```
-
-The system will then prompt you to enter your **LINE Channel Secret** and **LINE Channel Access Token**. Follow the on-screen instructions.
-
-### 2. Manual Configuration
-
-If you prefer to configure it manually, you can directly add your credentials to your `.env` file. Open your `.env` file and append the following lines, replacing the placeholder values with your actual secret and token:
-
-```env
-LINE_CHANNEL_SECRET=your_channel_secret_here
-LINE_CHANNEL_ACCESS_TOKEN=your_channel_access_token_here
-```
-
-## Running the Bot
-
-Once configured, you can start the LINE bot webhook server. This server will listen for incoming messages from LINE.
-
-To start it, use the command:
+## 3. การทดสอบส่งข้อความ
+คุณสามารถทดสอบส่งข้อความผ่าน cURL ได้ง่ายๆ ดังนี้:
 
 ```bash
-cargo run -- line
+curl -v -X POST https://api.line.me/v2/bot/message/push \
+-H 'Authorization: Bearer {YOUR_CHANNEL_ACCESS_TOKEN}' \
+-H 'Content-Type: application/json' \
+-d '{
+    "to": "{YOUR_USER_ID}",
+    "messages": [
+        {
+            "type": "text",
+            "text": "สวัสดีครับ! นี่คือข้อความจาก LINE Bot ของคุณ"
+        }
+    ]
+}'
 ```
 
-By default, the server will run on `http://localhost:8080`. If you need to use a different port, you can specify it with the `--port` flag:
-
-```bash
-cargo run -- line --port 9090
-```
-This would run the server on `http://localhost:9090`.
-
-## Webhook Setup (Crucial for Public Access)
-
-LINE's Messaging API requires a public HTTPS endpoint for its webhooks. This means your local development server needs to be accessible from the internet. Here's how to set that up, typically using `ngrok`:
-
-1.  **Expose your local server with ngrok**:
-    If your Nami LINE bot server is running on port `8080` (the default), open a new terminal and run:
-
-    ```bash
-    ngrok http 8080
-    ```
-    `ngrok` will provide you with a public HTTPS URL (e.g., `https://<your-ngrok-id>.ngrok-free.app`).
-
-2.  **Configure LINE Developers Console**:
-    *   Log in to your [LINE Developers Console](https://developers.line.biz/console/).
-    *   Navigate to your **Provider** > **Channel** > **Messaging API** settings.
-    *   Locate the **Webhook URL** section.
-    *   Set the Webhook URL to the `ngrok` URL you obtained, followed by `/callback`. For example: `https://<your-ngrok-id>.ngrok-free.app/callback`
-    *   Ensure that **Use webhook** is enabled.
-    *   Click the **Verify** button. This will send a test request to your Nami bot, confirming that it's receiving requests correctly. If successful, you'll see a confirmation message.
-
-## Implementation Details for Developers
-
-For those curious about the underlying implementation, the LINE integration logic resides in `src/modes/line.rs`. It leverages several Rust crates:
-
-*   **Axum**: Used for building the robust and efficient HTTP server that handles incoming webhook requests at the `/callback` endpoint.
-*   **HMAC-SHA256**: Crucial for security, this is used to verify the `x-line-signature` header in every incoming request, ensuring that messages genuinely originate from the LINE platform and haven't been tampered with.
-*   **AgentRunner**: This is Nami's core, responsible for processing the text received from LINE and generating intelligent AI responses.
-*   **Reqwest**: Utilized for making HTTP requests back to the LINE API to send reply messages to users.
+## สรุป
+การเริ่มต้นกับ LINE Bot นั้นไม่ซับซ้อนอย่างที่คิด สิ่งสำคัญคือการจัดการ Webhook และความปลอดภัยของ Access Token ให้ดีครับ
