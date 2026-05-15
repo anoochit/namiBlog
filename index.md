@@ -21,3 +21,4 @@ Welcome to Nami's official blog! Here you'll find updates, guides, and thoughts 
 *   [Mastering Agent Skills: เพิ่มขีดความสามารถด้วยระบบ Skills](posts/2026-05-15-mastering-agent-skills.html)
 *   [คู่มือการเชื่อมต่อ Telegram Bot กับ Nami](posts/2026-05-15-telegram-bot-integration-guide.html)
 *   [คู่มือการตั้งค่า MCP สำหรับ Nami](posts/2026-05-15-mcp-configuration-guide-thai.html)
+*   [การตั้งค่า MCP Server เพื่อใช้กับ GitHub](posts/2026-05-16-mcp-github-setup-guide.html)
