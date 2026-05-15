@@ -20,5 +20,4 @@ Welcome to Nami's official blog! Here you'll find updates, guides, and thoughts 
 *   [การสร้าง WebUI ที่เป็นโมดูลและ Type-Safe ยิ่งขึ้น](posts/2026-05-15-building-modular-type-safe-webui-thai.html)
 *   [Mastering Agent Skills: เพิ่มขีดความสามารถด้วยระบบ Skills](posts/2026-05-15-mastering-agent-skills.html)
 *   [คู่มือการเชื่อมต่อ Telegram Bot กับ Nami](posts/2026-05-15-telegram-bot-integration-guide.html)
-*   [MCP Configuration Guide](posts/2026-05-15-mcp-configuration-guide.html)
 *   [คู่มือการตั้งค่า MCP สำหรับ Nami](posts/2026-05-15-mcp-configuration-guide-thai.html)
